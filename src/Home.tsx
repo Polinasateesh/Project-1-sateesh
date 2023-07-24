@@ -33,7 +33,7 @@ const Home = () => {
             }
           />
           <Route
-            path="About/:id"
+            path="About"
             element={
               <Suspense fallback={<Loader />}>
                 <About />
