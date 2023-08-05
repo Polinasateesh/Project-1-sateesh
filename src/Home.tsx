@@ -50,7 +50,7 @@ const Home = () => {
           />
         </Routes>
       </BrowserRouter>
-      <div style={{position:'absolute',bottom:0,backgroundColor:'ButtonShadow',width:'100%',height:'60px',padding:'10px'}}>
+      <div style={{position:'absolute',bottom:0,backgroundColor:'ButtonShadow',width:'100%',height:'50px',padding:'10px'}}>
         <Footer />
       </div>  
     </>

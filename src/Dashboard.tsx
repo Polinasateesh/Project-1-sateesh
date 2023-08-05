@@ -1,9 +1,9 @@
 
 
-
+import Card from "@mui/joy/Card"
 const Dashboard=()=>{
     return(
-        <section> 
+        <Card> 
       <div className='container-fluid'>
         <h1 className="fw-600">
           Hello, <br /> I&apos;m{" "}
@@ -31,7 +31,7 @@ const Dashboard=()=>{
           
         </div>
       </div>
-    </section>
+    </Card>
     )
 }
 

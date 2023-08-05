@@ -16,7 +16,7 @@ export const Footer = () => {
         
       }}
     >
-      <div style={{backgroundColor:'#262b27', padding:'3px' , height:'30px' , borderTopRightRadius:'10px',borderBottomLeftRadius:'10px'}} >
+      <div style={{backgroundColor:'#262b27', padding:'3px' , height:'30px' , borderTopRightRadius:'16px',borderBottomLeftRadius:'16px'}} >
         <p style={{fontSize:'14px', color:'#ffffff'}}>&copy; {date} Sateesh Polina. All Rights Reserved.</p>
       </div>
       <div>
@@ -56,7 +56,7 @@ export const Footer = () => {
             style={{ marginRight: "20px" }}
           />
         </a>
-        <a href="mailto:polinasateesh111@gmail.com" title="Gmail">
+        <a href="mailto:polinasateesh212@gmail.com" title="Gmail">
           <img src={gmailLogo} width={"26px"} style={{ marginRight: "20px" }} />
         </a>
       </div>
