@@ -4,20 +4,14 @@ import twiterLogo from "./assets/twitter.png";
 import linkedinLogo from "./assets/linkedin.png";
 import gmailLogo from "./assets/logo-gmail-9952.png";
 
+
 export const Footer = () => {
   const date = new Date().getFullYear();
 
   return (
-    <footer
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        
-      }}
-    >
-      <div style={{backgroundColor:'#262b27', padding:'3px' , height:'30px' , borderTopRightRadius:'16px',borderBottomLeftRadius:'16px'}} >
-        <p style={{fontSize:'14px', color:'#ffffff'}}>&copy; {date} Sateesh Polina. All Rights Reserved.</p>
+    <footer>
+      <div className="footer-auth">
+        <p className="footer-text">&copy; {date} Sateesh Polina. All Rights Reserved.</p>
       </div>
       <div>
         <a
@@ -25,7 +19,7 @@ export const Footer = () => {
           title="instagram"
           target="_blank"
         >
-          <img src={instaLogo} width={"26px"} style={{ marginRight: "20px" }} />
+          <img src={instaLogo}  className="icons"/>
         </a>
         <a
           href="https://www.facebook.com/sateesh.chowdhary.5"
@@ -34,8 +28,8 @@ export const Footer = () => {
         >
           <img
             src={facebookLogo}
-            width={"26px"}
-            style={{ marginRight: "20px" }}
+            className="icons"
+          
           />
         </a>
         <a
@@ -45,19 +39,20 @@ export const Footer = () => {
         >
           <img
             src={linkedinLogo}
-            width={"26px"}
-            style={{ marginRight: "20px" }}
+            className="icons"
+
+           
           />
         </a>
         <a href="">
           <img
             src={twiterLogo}
-            width={"26px"}
-            style={{ marginRight: "20px" }}
+            className="icons"
+            
           />
         </a>
         <a href="mailto:polinasateesh212@gmail.com" title="Gmail">
-          <img src={gmailLogo} width={"26px"} style={{ marginRight: "20px" }} />
+          <img src={gmailLogo}  className="icons"/>
         </a>
       </div>
     </footer>

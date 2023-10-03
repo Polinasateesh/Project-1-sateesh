@@ -1,14 +1,14 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CircularProgress } from '@mui/material';
 import { Suspense, lazy } from "react";
-import Loader from "./Loader";
 const Contact = lazy(() => import("./Contact"));
 const Projects = lazy(() => import("./Projects"));
 const About = lazy(() => import("./About"));
 const NavBar = lazy(() => import("./NavBar"));
 const Dashboard = lazy(() => import("./Dashboard"));
-import  Footer  from "./Footer";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -19,7 +19,9 @@ const Home = () => {
           <Route
             path="/"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+              </div>}>
                 <Dashboard />
               </Suspense>
             }
@@ -27,7 +29,9 @@ const Home = () => {
           <Route
             path="Contact"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+              </div>}>
                 <Contact />
               </Suspense>
             }
@@ -35,7 +39,9 @@ const Home = () => {
           <Route
             path="About"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+              </div>}>
                 <About />
               </Suspense>
             }
@@ -43,16 +49,18 @@ const Home = () => {
           <Route
             path="Projects"
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+              </div>}>
                 <Projects />
               </Suspense>
             }
           />
         </Routes>
       </BrowserRouter>
-      <div style={{position:'absolute',bottom:0,backgroundColor:'ButtonShadow',width:'100%',height:'50px',padding:'10px'}}>
+      <div style={{ position: 'absolute', bottom: 0, backgroundColor: 'ButtonShadow', width: '100%', height: '50px', padding: '10px' }}>
         <Footer />
-      </div>  
+      </div>
     </>
   );
 };

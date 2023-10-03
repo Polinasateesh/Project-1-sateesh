@@ -1,8 +1,9 @@
 import Card from "@mui/joy/Card"
 const About=()=>{
     return(
-        <Card>
-        <h1>About</h1>
+        <Card className='card-container'>
+        <p className='card-heading'>About</p>
+        
         </Card>
     )
 }

@@ -2,33 +2,27 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import Logo from "./assets/pngwing.com.png";
 
+import './App.css'
+import Resumepopup from "./Resumepopup";
+import {  useState } from "react";
+
 const NavBar = () => {
-  const handleResumeDownload = () => {
-    alert("functionality not implemented");
+  const [open,setOpen]=useState<boolean>(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        boxShadow:
-          "0 3px 4px 0 rgba(0, 0, 3, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0) ",
-        backgroundColor: "#327ba8",
-      }}
+    <>
+     <div
+      className="nav-bar"
     >
       <Link
         to="/"
-        style={{
-          margin: "5px",
-          fontSize: "18px",
-          color: "#ffffff",
-          textDecoration: "none",
-        }}
+        className="nav-logo"
       >
-        <img src={Logo} height={"40px"} width={"40px"} />
+        <img src={Logo} height={"40px"} width={"40px"} alt="Logo" />
       </Link>
       <div
         style={{
@@ -39,63 +33,43 @@ const NavBar = () => {
       >
         <Link
           to="/"
-          style={{
-            marginRight: "35px",
-            fontSize: "18px",
-            color: "#ffffff",
-            textDecoration: "none",
-            fontFamily: "revert",
-          }}
+          className="nav-link"
         >
           Home
         </Link>
         <Link
           to="About"
-          style={{
-            marginRight: "35px",
-            fontSize: "18px",
-            color: "#ffffff",
-            textDecoration: "none",
-            fontFamily: "revert",
-          }}
+          className="nav-link"
+         
         >
           About
         </Link>
         <Link
           to="Projects"
-          style={{
-            marginRight: "35px",
-            fontSize: "18px",
-            color: "#ffffff",
-            textDecoration: "none",
-            fontFamily: "revert",
-          }}
+          className="nav-link"
         >
           Projects
         </Link>
         <Link
           to="Contact"
-          style={{
-            marginRight: "35px",
-            fontSize: "18px",
-            color: "#ffffff",
-            textDecoration: "none",
-            fontFamily: "revert",
-          }}
+          className="nav-link"
         >
-          {" "}
-          Contact{" "}
+          Contact
         </Link>
         <button
           type="button"
-          className="btn btn-outline-info"
-          style={{ padding: "5px", marginRight: "35px", fontFamily: "revert" }}
-          onClick={handleResumeDownload}
+          className="btn btn-outline-info nav-button"
+         
+          onClick={handleClickOpen}
         >
           Resume
         </button>
       </div>
     </div>
+    <Resumepopup open={open} setOpen={setOpen}/>
+    </>
+   
   );
 };
+
 export default NavBar;

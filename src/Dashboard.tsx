@@ -1,38 +1,39 @@
 
-
 import Card from "@mui/joy/Card"
-const Dashboard=()=>{
-    return(
-        <Card> 
+import { Button } from '@mui/material'
+import bootstrap from './assets/bootstrap.png'
+import css3 from './assets/css3.png'
+import html5 from './assets/html5.png'
+import javascript from './assets/javascript.png'
+import materialui from './assets/materialui.png'
+import redux from './assets/redux.png'
+import typescript from './assets/typescript.png'
+
+const Dashboard = () => {
+ 
+  return (
+    <Card className='card-container'>
       <div className='container-fluid'>
         <h1 className="fw-600">
           Hello, <br /> I&apos;m{" "}
           <span className="greenText">Sateesh Polina</span>.<br />
           I&apos;m a <span className="greenText">Frontend</span> Web Developer.
         </h1>
-        <div className="d-flex flex-column gap-4 mt-4">
-          {/* <div>
-            {techStack.map((tech) => (
-              <Link href={tech.href} key={tech.id} target="_blank">
-                <Image
-                  src={"/assets" + tech.src}
-                  alt={tech.name}
-                  width={80}
-                  height={80}
-                />
-              </Link>
-            ))}
-          </div> */}
-          {/* <Button
-            label="CHECK OUT MY CODE ON GITHUB"
-            href="https://github.com/AshutoshVJTI"
-            targetBlank
-          /> */}
-          
+        <div className="images-container">
+           <img src={bootstrap} alt={bootstrap} className="images"/>
+           <img src={css3}  alt={css3} className="images"/>
+           <img src={html5}  alt={html5} className="images"/>
+           <img src={javascript}  alt={javascript} className="images"/>
+           <img src={materialui}  alt={materialui} className="images"/>
+           <img src={redux}  alt={redux} className="images"/>
+           <img src={typescript}  alt={typescript} className="images"/>
         </div>
+          <div>
+            <Button variant="contained" href="https://github.com/Polinasateesh?tab=repositories" target="_blank">check my code on Github</Button>
+          </div>
       </div>
     </Card>
-    )
+  )
 }
 
 
