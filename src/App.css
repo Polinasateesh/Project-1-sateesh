@@ -142,3 +142,12 @@ body.light {
   margin: 20px;
 
 }
+
+.--footer-container{
+  position: absolute;
+  bottom: 0;
+  background-color: #f8f4f4;
+  width: 100%;
+  height: 50px; 
+  padding: 10px 
+}

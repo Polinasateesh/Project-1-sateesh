@@ -3,13 +3,14 @@ import facebookLogo from "./assets/facebook.png";
 import twiterLogo from "./assets/twitter.png";
 import linkedinLogo from "./assets/linkedin.png";
 import gmailLogo from "./assets/logo-gmail-9952.png";
+import './App.css'
 
 
 export const Footer = () => {
   const date = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer className="--footer-container">
       <div className="footer-auth">
         <p className="footer-text">&copy; {date} Sateesh Polina. All Rights Reserved.</p>
       </div>

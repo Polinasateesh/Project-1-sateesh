@@ -21,7 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
   '& .MuiPaper-root': {
     width: '90%',
-    height:'90%', 
+    height: '90%',
   },
 }));
 
@@ -31,7 +31,7 @@ interface popup {
 }
 
 const Resumepopup = (props: popup) => {
-    
+
   const { open, setOpen } = props;
 
   const handleDownload = () => {
@@ -42,11 +42,6 @@ const Resumepopup = (props: popup) => {
   const handleClose = () => {
     setOpen(false);
   };
-
-
-
-  
-  
 
   return (
     <div>
@@ -71,9 +66,9 @@ const Resumepopup = (props: popup) => {
           <CloseIcon />
         </IconButton>
         <DialogContent>
-          <div> 
-            <img src={Sateesh_Polina1} style={{ width: '100%' , height:'100%' }} alt="Image 2" />
-            <img src={Sateesh_Polina2} style={{ width: '100%' ,height:'100%'}} alt="Image 1" />
+          <div>
+            <img src={Sateesh_Polina1} style={{ width: '100%', height: '100%' }} alt="Image 2" />
+            <img src={Sateesh_Polina2} style={{ width: '100%', height: '100%' }} alt="Image 1" />
           </div>
         </DialogContent>
         <DialogActions>

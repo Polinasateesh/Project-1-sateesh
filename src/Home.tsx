@@ -11,56 +11,34 @@ const Dashboard = lazy(() => import("./Dashboard"));
 import Footer from "./Footer";
 
 const Home = () => {
+  const routes = [{
+    path: '/',
+    element: <Dashboard />
+  }, {
+    path: 'Contact',
+    element: <Contact />
+  }, {
+    path: 'About',
+    element: <About />
+  }, {
+    path: 'Projects',
+    element: <Projects />
+  }]
   return (
     <>
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <CircularProgress />
-              </div>}>
-                <Dashboard />
-              </Suspense>
-            }
-          />
-          <Route
-            path="Contact"
-            element={
-              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <CircularProgress />
-              </div>}>
-                <Contact />
-              </Suspense>
-            }
-          />
-          <Route
-            path="About"
-            element={
-              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <CircularProgress />
-              </div>}>
-                <About />
-              </Suspense>
-            }
-          />
-          <Route
-            path="Projects"
-            element={
-              <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <CircularProgress />
-              </div>}>
-                <Projects />
-              </Suspense>
-            }
-          />
+          {routes.map((eachRoute) => (
+            <Route key={eachRoute.path} path={eachRoute.path} element={<Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+              <CircularProgress />
+            </div>}>
+              {eachRoute.element}
+            </Suspense>} />
+          ))}
         </Routes>
       </BrowserRouter>
-      <div style={{ position: 'absolute', bottom: 0, backgroundColor: 'ButtonShadow', width: '100%', height: '50px', padding: '10px' }}>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
