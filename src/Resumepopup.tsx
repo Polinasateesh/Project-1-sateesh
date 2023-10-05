@@ -21,7 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
   '& .MuiPaper-root': {
     width: '90%',
-    height:'90%', // Adjust the width of the dialog as needed
+    height:'90%', 
   },
 }));
 
@@ -31,6 +31,7 @@ interface popup {
 }
 
 const Resumepopup = (props: popup) => {
+    
   const { open, setOpen } = props;
 
   const handleDownload = () => {
@@ -41,6 +42,11 @@ const Resumepopup = (props: popup) => {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+
+  
+  
 
   return (
     <div>
@@ -94,5 +100,12 @@ const Resumepopup = (props: popup) => {
     </div>
   );
 };
+
+
+
+
+
+
+
 
 export default Resumepopup;

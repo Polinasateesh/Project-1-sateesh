@@ -1,8 +1,9 @@
-import React, { useState } from 'react'; // Import React and { useState }
+import React, { useState } from 'react';
 import { Card, Button, TextField, Grid, CircularProgress, InputAdornment } from '@mui/material';
 import './App.css';
 import SendIcon from '@mui/icons-material/Send';
 import CloseIcon from '@mui/icons-material/Close';
+import emailjs from 'emailjs-com';
 
 interface FormValues {
     firstName: string;
@@ -23,7 +24,7 @@ const defaultValues: FormValues = {
 const ContactForm: React.FC = () => { 
     const [value, setValue] = useState<FormValues>(defaultValues); 
     const [isLoading, setIsLoading] = useState(false);
-
+    
     const handleClose = () => {
         setValue(defaultValues);
     };
@@ -36,6 +37,12 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => { 
         event.preventDefault();
+        emailjs.sendForm('service_l89nq3z', 'service_l89nq3z',event.target as HTMLFormElement)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
         setIsLoading(true);
         
 
